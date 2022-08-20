@@ -15,14 +15,14 @@ remote_theme             : "mmistakes/minimal-mistakes@4.15.1"
 minimal_mistakes_skin    : "haxor" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "snowscan.io"
+locale                   : "es-PE"
+title                    : "hiteek.io"
 title_separator          : "-"
-name                     : "Snowscan"
-description              : "Posts about security, CTFs and networking"
-url                      : "https://snowscan.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Hiteek"
+description              : "HTB Writeups and Posts about security"
+url                      : "https://hiteek.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "slemire/slemire.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "Hiteek/hiteek.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 logo                     : "/assets/images/masthead.png"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
@@ -101,35 +101,35 @@ analytics:
 
 # Site Author
 author:
-  name             : "Snowscan"
-  avatar           : "/assets/images/avatar.png"
-  bio              : "Pentester, CTF player<br>HackTheBox ATeam"
-  location         : "Canada"
-  email            : "info@snowscan.io"
+  name             : "Hiteek"
+  avatar           : "/assets/images/avatar.jpg"
+  bio              : "CTF player"
+  location         : "Peru"
+  email            : "ruben.ricapa.c@uni.pe"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "slemire"
-  gitlab           :
-  google_plus      :
-  keybase          : "snowscan"
-  instagram        :
-  lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  pinterest        :
-  soundcloud       :
+  bitbucket        : #
+  codepen          : #
+  dribbble         : #
+  flickr           : #
+  facebook         : #
+  foursquare       : #
+  github           : "Hiteek"
+  gitlab           : #
+  google_plus      : #
+  keybase          : #
+  instagram        : #
+  lastfm           : #
+  linkedin         : ruben-anthony-ricapa-corrales-318252191
+  pinterest        : #
+  soundcloud       : #
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
-  tumblr           :
-  twitter          : "snowscan"
-  vine             :
-  weibo            :
-  xing             :
+  tumblr           : #
+  twitter          : #
+  vine             : #
+  weibo            : #
+  xing             : #
   youtube          : # "https://youtube.com/c/MichaelRoseDesign"
 
 
