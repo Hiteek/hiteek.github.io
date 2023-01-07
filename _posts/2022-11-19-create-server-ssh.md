@@ -1,7 +1,7 @@
 ---
 layout: single
-title: SSH
-date: 2022-11-19
+title: Notas de investigación sobre SSH de hiteek
+date: 2023-1-7
 classes: wide
 header:
   teaser: /assets/images/slae32.png
@@ -12,7 +12,9 @@ tags:
   - Networking
   - OpenSSH server
 ---
-El presentre post lo cree porque me dio curiosidad saber el funcionamiento de este protocolo y queria entenderlo más a fondo, también me servirá como notas para recordar. Pero de igual manera le puse un a la escritura un tono un poco robotico al inicio pero luego narrativo.
+
+
+El presente post lo cree porque me dio curiosidad saber el funcionamiento de este protocolo y queria entenderlo más a fondo, también me servirá como notas para recordar. Pero de igual manera le puse un a la escritura un tono un poco robotico al inicio pero luego narrativo.
 # Instalación y configuración
 
 En el siguiente post veremos todo lo que investigue sobre como crear un servidor ssh en casa. Empezamos con los comandos clasicos para instalar OpenSSH server en nuestra máquina linux
