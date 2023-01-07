@@ -1,10 +1,10 @@
 ---
 layout: single
 title: Notas de investigación sobre SSH de hiteek
-date: 2023-1-7
+date: 2023-01-7
 classes: wide
 header:
-  teaser: /assets/images/slae32.png
+  teaser: /assets/images/create-server-ssh/teaser.jpg
 categories:
   - HowTo
   - Linux
@@ -223,7 +223,7 @@ Si con esta explicación no bastó y quieren profundizar aún más los invito a 
 
 
 Parte 1   
-Se establece la conexión.   
+Se establece la conexión.    
 
 ![](/assets/images/create-server-ssh/3.png)
 
