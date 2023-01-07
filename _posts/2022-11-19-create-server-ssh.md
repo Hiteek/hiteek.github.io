@@ -223,7 +223,8 @@ Si con esta explicación no bastó y quieren profundizar aún más los invito a 
 
 
 Parte 1   
-Se establece la conexión.
+Se establece la conexión.   
+
 ![](/assets/images/create-server-ssh/3.png)
 
 Parte 2 y 3   
