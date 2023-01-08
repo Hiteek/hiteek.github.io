@@ -4,7 +4,7 @@ title: Notas de investigación sobre SSH
 date: 2023-01-7
 classes: wide
 header:
-  teaser: /assets/images/create-server-ssh/teaser.jpg
+  teaser: /assets/images/notes-about-ssh/teaser.jpg
 categories:
   - HowTo
   - Linux
@@ -56,7 +56,7 @@ A la hora de querer instalar openssh-server nos puede surgir la duda de porque h
   </p>
 </details>
 
-![](/assets/images/create-server-ssh/1.png)
+![](/assets/images/notes-about-ssh/1.png)
 
 
 Si no te surge la duda ejecute el siguiente comando para instalar el servidor openssh
@@ -204,28 +204,28 @@ El protocolo de SSH consiste en 3 partes principales:
 
 Ya que dimos un vistazo global del protocolo SSH, ahora profundizaremos un poco más guiándonos en el siguiente gráfico.
 
-![](/assets/images/create-server-ssh/2.png)
+![](/assets/images/notes-about-ssh/2.png)
 
 1. Establece la conexión: Se refiere al ya conocido TCP 3-way Handshake. Si no lo conoces, en un futuro realizaré un post teórico acerca de él y otros protocolos más.   
- ![](/assets/images/create-server-ssh/3.png)
+ ![](/assets/images/notes-about-ssh/3.png)
 
 2. Servidor envía llave pública al cliente: Una vez que establecemos la conexión, el servidor nos enviará su llave pública.
 
 3. Verifica la identidad del servidor: El cliente procederá a revisar en sus archivos (known_hosts).  
-![](/assets/images/create-server-ssh/4.png)
+![](/assets/images/notes-about-ssh/4.png)
 Si el servidor es conocido (es decir si ya nos hemos
 conectando antes al servidor).   
-![](/assets/images/create-server-ssh/5.png)
+![](/assets/images/notes-about-ssh/5.png)
 
 4. Negociación de versiones: El cliente y el servidor deciden qué versión de SSH utilizar, ya sea 1.0 o 2.0. La diferencia es que dependiendo de la versión habrá más métodos de autenticación, métodos de intercambio de claves y mejoras en las capacidades del servicio.   
-![](/assets/images/create-server-ssh/6.png)
+![](/assets/images/notes-about-ssh/6.png)
 
 5. Negocio de algoritmos: En esta parte se negocian algunos algoritmos como: el algoritmo de intercambio de claves para generar claves de sesión, un algoritmo de cifrado para cifrar datos, un algoritmo de clave pública para firma digital y autenticación, y un algoritmo HMAC para proteger la integridad de los datos.   
-![](/assets/images/create-server-ssh/7.png)   
+![](/assets/images/notes-about-ssh/7.png)   
 
 6. Intercambio de llaves (Key Exchange): Cada uno por separado utiliza los datos que compartieron y sus datos privados para que cada uno, por su cuenta, mediante el algoritmo de Diffie-Hellman compute una clave de sesión idéntica, la cual se utilizará para cifrar y descifrar los datos.   
-![](/assets/images/create-server-ssh/8.png)   
+![](/assets/images/notes-about-ssh/8.png)   
 
 7. Autenticación del cliente: En este punto la conexión ya es segura y cifrada, ahora solo quedaría autenticarse mediante una llave pública o una contraseña.
-![](/assets/images/create-server-ssh/9.png)   
+![](/assets/images/notes-about-ssh/9.png)   
 Espero que este post te haya ayudado a comprender de mejor manera el protocolo SSH. Si hay algo más que agregar, lo haré en un futuro. ¡Hasta pronto!
