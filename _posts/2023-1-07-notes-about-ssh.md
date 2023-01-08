@@ -106,84 +106,83 @@ foo@bar:~$ sudo ufw allow 22
 
 2) Cuando abrimos una conexion SSH a veces nos olvidamos de cerrarla, por lo que es bueno establecer un tiempo limite de inactividad. Esto lo podemos configurar modificando los siguientes parámetros del archivo /etc/ssh/sshd_config.
 
-``` bash
-  ClientAliveInterval 360
-  ClientAliveCountMax 0
-```
-Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.
-<details>
-  <summary>Dato</summary>
-  <p>
-  <li>ClientAliveInterval: Indica los segundos hasta que el servidor envie un paquete nulo al cliente para verificar si sigue activo.</li>
-  <li>ClientAliveCountMax: Indica el numero de paquetes nulos que enviará el servidor, antes de finalizar la conexion</li>
-  </p>
-</details>
+    ``` bash
+      ClientAliveInterval 360
+      ClientAliveCountMax 0
+    ```
+      Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.
+      <details>
+        <summary> Dato</summary>
+        <p>
+        <li>ClientAliveInterval: Indica los segundos hasta que el servidor envie un paquete nulo al cliente para verificar si sigue activo.</li>
+        <li>ClientAliveCountMax: Indica el numero de paquetes nulos que enviará el servidor, antes de finalizar la conexion</li>
+        </p>
+      </details>
 
 3) Desactivar el login sin contraseña editando parámetro del archivo /etc/ssh/sshd_config.
 
-``` bash
-PermitEmptyPasswords no
-```
+    ``` bash
+    PermitEmptyPasswords no
+    ```
 
 4) Añadir una lista blanca de usuarios permitidos para conectarse mediante ssh modificando el siguiente parámetro del archivo /etc/ssh/sshd_config.
 
 
-``` bash
-AllowUsers user1 user2
-```
+    ``` bash
+    AllowUsers user1 user2
+    ```
 
-Para que los cambios hagan efecto debes reiniciar el servicio de la siguiente manera:
+    Para que los cambios hagan efecto debes reiniciar el servicio de la siguiente manera:
 
-``` bash
-service sshd restart
-```
+    ``` bash
+    service sshd restart
+    ```
 
-5) Desactivamos el logeo a SSH como root.<br/>
+  5) Desactivamos el logeo a SSH como root.<br/>
+    En  /etc/ssh/sshd_config escribimos:
 
-En  /etc/ssh/sshd_config escribimos:
+        ``` bash
+        PermitRootLogin no
+        ```
+        Y reiniciamos el servicio ssh.
 
-``` bash
-PermitRootLogin no
-```
-Y reiniciamos el servicio ssh.
-
-``` bash
-service sshd restart
-```
+        ``` bash
+        service sshd restart
+        ```
 
 6) Cambiamos el puerto en el cual se va ejecutar el servicio SSH. Esto lo hacemos porque mayormente los bots maliciosos atacan el puerto 22 de manera predeterminada.</br>
 
-En /etc/ssh/sshd_config escribimos:
+    En /etc/ssh/sshd_config escribimos:
 
-``` bash
-Port 2025
-```
+    ``` bash
+    Port 2025
+    ```
 
-Y reiniciamos el servicio ssh.
+    Y reiniciamos el servicio ssh.
 
-``` bash
-service sshd restart
-```
+    ``` bash
+    service sshd restart
+    ```
 
 7) Para la autenticación, utilizamos llaves publicas y privadas en vez de contraseñas.
 Desde nuestra máquina cliente creamos una llave pública y una llave privada de la siguiente manera:
 
 
-``` bash
-ssh-keygen -t rsa
-``` 
-Nos creará 2 archivos: id_rsa y id_rsa.pub. </br>
+    ``` bash
+    ssh-keygen -t rsa
+    ``` 
+    Nos creará 2 archivos: id_rsa y id_rsa.pub. </br>
 
-El archivo id_rsa.pub debes enviarlo al servidor, especificamente debemos pegar su contenido en el archivo ~/.ssh/authorized_keys del servidor.
-Debes darle permiso al archivo
+    El archivo id_rsa.pub debes enviarlo al servidor, especificamente debemos pegar su contenido en el archivo ~/.ssh/authorized_keys del servidor.
+    Debes darle permiso al archivo
 
-``` bash
-chmod 600 ~/.ssh/authorized_keys
-``` 
-Y por ultimo en /etc/ssh/sshd_config escribimos:
-``` bash
-PasswordAuthentication no
-```
+    ``` bash
+    chmod 600 ~/.ssh/authorized_keys
+    ``` 
+    Y por ultimo en /etc/ssh/sshd_config escribimos:
+    ``` bash
+    PasswordAuthentication no
+    ```
 8) Limite los intentos de inicio de sesión fallidos configurando el parámetro "MaxAuthTries" en el archivo de configuración de SSH (/etc/ssh/sshd_config).
 
 9) Aplique parches y actualizaciones de seguridad de forma regular para asegurarse de tener la última protección contra vulnerabilidades conocidas.
