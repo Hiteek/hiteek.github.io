@@ -104,23 +104,24 @@ foo@bar:~$ sudo ufw allow 22
 # Medidas de seguridad 
 1) Lo primera obviamente es utilizar una contraseña segura puesto que al día ocurren miles de ataques de fuerza bruta destinados a los servidores SSH.
 
-2) Cuando abrimos una conexion SSH a veces nos olvidamos de cerrarla, por lo que es bueno establecer un tiempo limite de inactividad. Esto lo podemos configurar modificando los siguientes parámetros del archivo /etc/ssh/sshd_config.
+2) Cuando abrimos una conexion SSH a veces nos olvidamos de cerrarla, por lo que es bueno establecer un tiempo limite de inactividad. Esto lo podemos configurar modificando los siguientes parámetros del archivo /etc/ssh/sshd_config.   
+
 ``` bash
   ClientAliveInterval 360
   ClientAliveCountMax 0
 ```
 
-    Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.
+  Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.
     
-    <details>
-      <summary> Dato</summary>
-      <p>
-      <li>ClientAliveInterval: Indica los segundos hasta que el servidor envie un paquete nulo al cliente para verificar si sigue activo.</li>
-      <li>ClientAliveCountMax: Indica el numero de paquetes nulos que enviará el servidor, antes de finalizar la conexion</li>
-      </p>
-    </details>
+  <details>
+    <summary> Dato</summary>
+    <p>
+    <li>ClientAliveInterval: Indica los segundos hasta que el servidor envie un paquete nulo al cliente para verificar si sigue activo.</li>
+    <li>ClientAliveCountMax: Indica el numero de paquetes nulos que enviará el servidor, antes de finalizar la conexion</li>
+    </p>
+  </details>
 
-3) Desactivar el login sin contraseña editando parámetro del archivo /etc/ssh/sshd_config.
+3) Desactivar el login sin contraseña editando parámetro del archivo /etc/ssh/sshd_config.    
 
   ``` bash
   PermitEmptyPasswords no
