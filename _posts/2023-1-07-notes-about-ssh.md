@@ -14,7 +14,7 @@ tags:
 ---
 
 
-Me despertó la curiosidad saber más sobre cómo funciona SSH y decidí crear este post para profundizar mis conocimientos y tener una guía de referencia para el futuro. Aunque ya tenía una noción básica de su funcionamiento, quería entender mejor cómo se aplica en la práctica y cuáles son sus principales usos y beneficios. ¡Espero que disfruten leyendo sobre este interesante tema y aprendan tanto como yo!
+Me despertó la curiosidad saber más sobre cómo funciona SSH y decidí crear este post para profundizar mis conocimientos y tener una guía de referencia para el futuro. Aunque ya tenía una noción básica de su funcionamiento, quería entender mejor cómo es su flujo de trabajalo por detrás y como securizarlo. ¡Espero que disfruten leyendo sobre este interesante tema y aprendan tanto como yo!
 
 # Instalación y configuración
 
