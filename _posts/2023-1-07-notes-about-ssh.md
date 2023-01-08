@@ -102,9 +102,9 @@ foo@bar:~$ sudo ufw allow 22
 </details>
 
 # Medidas de seguridad 
-1. Lo primera obviamente es utilizar una contraseña segura puesto que al día ocurren miles de ataques de fuerza bruta destinados a los servidores SSH.
+1) Lo primera obviamente es utilizar una contraseña segura puesto que al día ocurren miles de ataques de fuerza bruta destinados a los servidores SSH.
 
-2. Cuando abrimos una conexion SSH a veces nos olvidamos de cerrarla, por lo que es bueno establecer un tiempo limite de inactividad. Esto lo podemos configurar modificando los siguientes parámetros del archivo /etc/ssh/sshd_config.
+2) Cuando abrimos una conexion SSH a veces nos olvidamos de cerrarla, por lo que es bueno establecer un tiempo limite de inactividad. Esto lo podemos configurar modificando los siguientes parámetros del archivo /etc/ssh/sshd_config.
 
 ``` bash
   ClientAliveInterval 360
@@ -119,13 +119,13 @@ Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.
   </p>
 </details>
 
-3. Desactivar el login sin contraseña editando parámetro del archivo /etc/ssh/sshd_config.
+3) Desactivar el login sin contraseña editando parámetro del archivo /etc/ssh/sshd_config.
 
 ``` bash
 PermitEmptyPasswords no
 ```
 
-4. Añadir una lista blanca de usuarios permitidos para conectarse mediante ssh modificando el siguiente parámetro del archivo /etc/ssh/sshd_config.
+4) Añadir una lista blanca de usuarios permitidos para conectarse mediante ssh modificando el siguiente parámetro del archivo /etc/ssh/sshd_config.
 
 
 ``` bash
@@ -138,7 +138,7 @@ Para que los cambios hagan efecto debes reiniciar el servicio de la siguiente ma
 service sshd restart
 ```
 
-5. Desactivamos el logeo a SSH como root.<br/>
+5) Desactivamos el logeo a SSH como root.<br/>
 
 En  /etc/ssh/sshd_config escribimos:
 
@@ -151,7 +151,7 @@ Y reiniciamos el servicio ssh.
 service sshd restart
 ```
 
-6. Cambiamos el puerto en el cual se va ejecutar el servicio SSH. Esto lo hacemos porque mayormente los bots maliciosos atacan el puerto 22 de manera predeterminada.</br>
+6) Cambiamos el puerto en el cual se va ejecutar el servicio SSH. Esto lo hacemos porque mayormente los bots maliciosos atacan el puerto 22 de manera predeterminada.</br>
 
 En /etc/ssh/sshd_config escribimos:
 
@@ -165,7 +165,7 @@ Y reiniciamos el servicio ssh.
 service sshd restart
 ```
 
-7. Para la autenticación, utilizamos llaves publicas y privadas en vez de contraseñas.
+7) Para la autenticación, utilizamos llaves publicas y privadas en vez de contraseñas.
 Desde nuestra máquina cliente creamos una llave pública y una llave privada de la siguiente manera:
 
 
@@ -184,9 +184,9 @@ Y por ultimo en /etc/ssh/sshd_config escribimos:
 ``` bash
 PasswordAuthentication no
 ```
-8. Limite los intentos de inicio de sesión fallidos configurando el parámetro "MaxAuthTries" en el archivo de configuración de SSH (/etc/ssh/sshd_config).
+8) Limite los intentos de inicio de sesión fallidos configurando el parámetro "MaxAuthTries" en el archivo de configuración de SSH (/etc/ssh/sshd_config).
 
-9. Aplique parches y actualizaciones de seguridad de forma regular para asegurarse de tener la última protección contra vulnerabilidades conocidas.
+9) Aplique parches y actualizaciones de seguridad de forma regular para asegurarse de tener la última protección contra vulnerabilidades conocidas.
 
 # Como funciona SSH
 
