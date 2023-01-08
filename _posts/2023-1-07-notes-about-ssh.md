@@ -111,8 +111,7 @@ foo@bar:~$ sudo ufw allow 22
   ClientAliveCountMax 0
 ```
 
-  Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.
-    
+  Esto quiere decir que en 360 segundos de inactividad la conexion se cerrara.    
   <details>
     <summary> Dato</summary>
     <p>
@@ -121,6 +120,7 @@ foo@bar:~$ sudo ufw allow 22
     </p>
   </details>
 
+
 3) Desactivar el login sin contraseña editando parámetro del archivo /etc/ssh/sshd_config.    
 
   ``` bash
@@ -128,7 +128,6 @@ foo@bar:~$ sudo ufw allow 22
   ```
 
 4) Añadir una lista blanca de usuarios permitidos para conectarse mediante ssh modificando el siguiente parámetro del archivo /etc/ssh/sshd_config.
-
 
   ``` bash
   AllowUsers user1 user2
@@ -144,48 +143,52 @@ foo@bar:~$ sudo ufw allow 22
 
   En  /etc/ssh/sshd_config escribimos:
 
-      ``` bash
-      PermitRootLogin no
-      ```
-      Y reiniciamos el servicio ssh.
+  ``` bash
+  PermitRootLogin no
+  ```
 
-      ``` bash
-      service sshd restart
-      ```
+  Y reiniciamos el servicio ssh.
+
+  ``` bash
+  service sshd restart
+  ```
 
 6) Cambiamos el puerto en el cual se va ejecutar el servicio SSH. Esto lo hacemos porque mayormente los bots maliciosos atacan el puerto 22 de manera predeterminada.   
 
-    En /etc/ssh/sshd_config escribimos:
+  En /etc/ssh/sshd_config escribimos:
 
-    ``` bash
-    Port 2025
-    ```
+  ``` bash
+  Port 2025
+  ```
 
-    Y reiniciamos el servicio ssh.
+  Y reiniciamos el servicio ssh.
 
-    ``` bash
-    service sshd restart
-    ```
+  ``` bash
+  service sshd restart
+  ```
 
 7) Para la autenticación, utilizamos llaves publicas y privadas en vez de contraseñas.
 Desde nuestra máquina cliente creamos una llave pública y una llave privada de la siguiente manera:
 
 
-    ``` bash
-    ssh-keygen -t rsa
-    ``` 
-    Nos creará 2 archivos: id_rsa y id_rsa.pub. </br>
+  ``` bash
+  ssh-keygen -t rsa
+  ``` 
 
-    El archivo id_rsa.pub debes enviarlo al servidor, especificamente debemos pegar su contenido en el archivo ~/.ssh/authorized_keys del servidor.
-    Debes darle permiso al archivo
+  Nos creará 2 archivos: id_rsa y id_rsa.pub. </br>
 
-    ``` bash
-    chmod 600 ~/.ssh/authorized_keys
-    ``` 
-    Y por ultimo en /etc/ssh/sshd_config escribimos:
-    ``` bash
-    PasswordAuthentication no
-    ```   
+  El archivo id_rsa.pub debes enviarlo al servidor, especificamente debemos pegar su contenido en el archivo ~/.ssh/authorized_keys del servidor.
+  Debes darle permiso al archivo
+
+  ``` bash
+  chmod 600 ~/.ssh/authorized_keys
+  ``` 
+
+  Y por ultimo en /etc/ssh/sshd_config escribimos:
+  
+  ``` bash
+  PasswordAuthentication no
+  ```   
 
 8) Limite los intentos de inicio de sesión fallidos configurando el parámetro "MaxAuthTries" en el archivo de configuración de SSH (/etc/ssh/sshd_config).
 
