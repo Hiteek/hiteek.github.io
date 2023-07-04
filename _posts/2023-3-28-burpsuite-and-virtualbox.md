@@ -4,7 +4,7 @@ title: Cómo interceptar peticiones dentro de una máquina virtual con BurpSuite
 date: 2023-01-7
 classes: wide
 header:
-  teaser: /assets/images/notes-about-ssh/teaser.jpg
+  teaser: /assets/images/burpsuite-and-virtualbox/teaser.jpg
 categories:
   - Virtual Machines
   - Tutoriales de BurpSuite
