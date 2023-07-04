@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Cómo interceptar peticiones dentro de una máquina virtual con BurpSuite
-date: 2023-01-7
+date: 2023-07-4
 classes: wide
 header:
   teaser: /assets/images/burpsuite-and-virtualbox/teaser.jpg
