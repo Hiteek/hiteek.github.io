@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Happy Android 1
-date: 2025-07-2
+date: 2025-09-7
 classes: wide
 header:
   teaser: /assets/images/happy-android-I/teaser.jpg
